@@ -34,3 +34,13 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9.9  # Replace with your desired Python version
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt  # Replace with your actual dependencies installation command
+
+      - name: Run Uvicorn
+        run: uvicorn main:app
